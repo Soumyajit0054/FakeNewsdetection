@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} Services Page {% endblock %}
+
+{% block content %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    
+    <section class="py-5 bg-light">
+        <div class="container about-container text-center">
+            <h1 class="mb-3">Our Services</h1>
+            <p>At TruthLens, our mission is simple — to help you separate fact from fiction. With our AI-powered Fake
+                News Detection system, you can instantly verify the credibility of any news article or statement. Just
+                paste the text below, click “Check News,” and let our intelligent model analyze the truth for you in
+                seconds.</p>
+            <button type="button" class="btn btn-secondary">Get Started</button>
+        </div>
+    </section>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-center mb-4">Fake News Detection Tool</h4>
+                        <form action="/predict" method="post">
+                            <div class="mb-4">
+                                <label for="newsInput" class="form-label fw-semibold">Enter the News Text Below:</label>
+                                <textarea class="form-control form-control-lg bg-light" id="newsInput" rows="6"
+                                    placeholder="Paste your news content here for analysis..." style="resize: none;" name="newsInput" required>{% if news_text %}{{ news_text }}{% endif %}</textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-secondary btn-lg px-5">
+                                    Check News
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if prediction %}
+    <div class="alert alert-info text-center mt-4">
+        <h5>{{ prediction }}</h5>
+    </div>
+    {% endif %}
+
+
+
+    {% block footer %}
+    {% include 'base1.html' %}
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+{% endblock %}

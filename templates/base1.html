@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block footer %} footer {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <footer class="bg-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row justify-content-between">
+                <!-- About -->
+                <div class="col-md-6 mb-3 text-center text-md-start">
+                    <h3><b>Fake News Detection</b></h3>
+                    <p class="small">
+                        At TruthLens, our AI-powered system detects fake news, analyzing sources and content to help you
+                        distinguish truth from misinformation, building a smarter, trustworthy internet.
+                    </p>
+                </div>
+
+                <!-- Social -->
+                <div class="col-md-4 mb-3 text-center text-md-end">
+                    <h3><strong>Follow Us</strong></h3>
+                    <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-light me-3"><i class="bi bi-linkedin fs-4"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                </div>
+            </div>
+
+            <hr class="border-light">
+
+            <p class="text-center small mb-0">&copy; 2025 Fake News Detection | Designed by Soumyajit Dutta</p>
+        </div>
+    </footer>
+    
+   {% block content1 %}
+
+
+
+    {% endblock %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</body>
+</html>
